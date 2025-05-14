@@ -1,0 +1,122 @@
+Pessimistic locking
+No two thread should access critical section at a time
+when one thread is executing it others should wait.
+
+- we are locking a resource, one who has the locj proceeds while others wait
+
+- Not free of cost , other threads are waiting ---> Performance degrades 
+ --> Amount of code we put bw mutex or pessimistic lock should be minimum --> to maximum parallalism
+- threads that are ready but are waiting for lock
+
+
+Optimistic locking
+- if two threads tries do the same thing at the same time, then one succeed s then other fails
+
+implemented using:::
+******Compare and swap semantic******
+ 
+c&ss (&count, &oldValue, &newValue)
+
+The simple explanation is like - >  compare the current value with old value -> if matches -> operation succeeds, otherwise fails
+ 
+current value = 10
+CAS(count, 10, 11) & CAS(count, 10, 15)
+ if (count == 10 ) count =11 - one operation first passes
+ 
+second one fails since count == 10 fails -> no effect
+
+But what if some thread context switches during CAS ?
+CAS operations are ATOMIC operation --> CPU DOES NOT CONTEXT SWITCH AT ALL **** -> When the instruction is executing OS cannot context switch
+Solution: Memory barriers + MESI protocol
+The CPU uses cache coherence protocols like MESI (Modified, Exclusive, Shared, Invalid) to ensure CAS operations reflect the latest shared memory state.
+
+CAS is a read-modify-write operation — the CPU will lock the memory bus or use special cache instructions to coordinate across cores.
+
+It invalidates other cores’ caches and forces them to see the updated value.
+
+Beauty --> we decide what to do with a failure
+ - either retry
+ - ignore
+ - throw error
+
+Advantages
+- Better throughput than pessimistic - when there are rare conflicts and fewer contentions.
+- low locking overhead.
+- we get to pick how to resolve conflicts
+
+
+Didadvantages
+- implementation is non-trivial and verbose implementation
+- Not meant for all usecases, esp when contention and conflicts are high.
+
+
+lock cmxchgl - compare exchange long with lock
+this instruction runs on underlying hardware so our hardware need to support or expose an instruction like this &&& ARCHITECTURE needs to support as well
+ this is why some implementation in case of CPU doesn not support this instruction uses mutexes - pessimistic locking
+
+
+defer function in go: whatever is written after this is executed when the function exits.
+
+
+Concurrent queues
+Adv
+- thread safety - safr than natice queues
+- improves scalability - improves programs throughput and performance
+- data integerity- correctness
+
+Where does it lack ?
+- synchronization overhead
+2 -wait/ block time 
+pessimistic locking
+
+Real world applications
+ 1> producer consumer pattern - batch processing
+2 > Thread pool are implemented uses it.
+
+
+Thread Pools
+- so we have a webserver and for each request we spin up a new threads but what if we have a large no of thread, each thread requires its own stack memory
+so memory consumption shots up
+- CPU would take more time in context switching rather than actual processing
+- overrin the hardware
+- consumption of resources
+
+so we would need to cap the maximum no of threads that we create
+
+Threadpool is a collection of worker threads that are used to exeuste tasks or requests concurrently
+whenever we wants a thread instead of spinning a new thread, we pick a thread we use it and return back to the pool
+can use concurrent blocking queue for it.
+
+if the queue is empty and we are trying to pull a thread means there is where we would be blocking the request(incoming).
+it ensures the hardware doesn't overwhelm.
+
+it ensures stable performance of our system.
+it has a size effect -> other requests have to wait or rejected - so tuning of thread pools have to be done.
+
+it is difficult to tune a thread pool
+- if too small - underutilization of thread pool
+- too huge - hardware overwhelms
+
+- no of processors available
+- characteristc of tasks being executed - CPU boun or IO bound
+
+
+*********************************************  DEADLOCKS *************************************************
+Deda lock conditions
+- Mutual exclusion - only one thread can access aresource at a time
+- hold and wait: one thread is holding at least on resource and is waiting to aquire another resouce held by other threads
+- no preemption: Resources cannot be forcibily taken from threads holding them
+- circular wait: a set of theads is wiating for each other in a circular chain.
+
+
+mm/dd/yyyy
+
+
+
+
+
+
+
+
+
+

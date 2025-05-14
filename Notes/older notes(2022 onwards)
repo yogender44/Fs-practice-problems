@@ -1,0 +1,317 @@
+In case of call by reference original value is changed if we made changes in the called method. If we pass object in place of any primitive value, original value will be changed. In this example we are passing object as a value. Let's take a simple example:
+12:15
+In pass-by-reference, changes made to the parameters inside the method are also reflected outside. Though Java does not support pass-by-reference, we can achieve pass-by-reference in Java for non-primitives.
+
+
+Yogender
+  12:56 PM
+We'll invoke getResultList() to execute them.
+Of course, we can use the getSingleResult() if the query returns just a single object:
+
+
+Yogender
+  1:33 PM
+Declares the local business interface(s) for a session bean.
+The Local annotation is applied to the session bean class or local business interface to designate a local interface of the bean.
+When used on the bean class, declares the local business interface(s) for a session bean. When used on an interface, designates that interface as a local business interface. In this case, no value element should be provided.
+The Local annotation applies only to session beans and their interfaces.
+Use of the Local annotation is only required when the bean class does not implement only a single interface other than any of the following: java.io.Serializable; java.io.Externalizable; any of the interfaces defined in javax.ejb.
+
+If your EJB implements some interface but you don't specify (neither on the EJB nor the interface itself) which interface it is (@Remote, @Local) than it's assumed that it's a @Local one.
+@Inject can inject any bean, while @EJB can only inject EJBs. You can use either to inject EJBs, but I'd prefer @Inject everywhere.
+2:01
+A stateless session bean is a type of enterprise bean which is commonly used to do independent operations. It does not have any associated client state, but it may preserve its instance state.
+
+You can't call something that doesn't exist. Since you haven't created an object, the non-static method doesn't exist yet. A static method (by definition) always exists.
+
+
+Yogender
+  10:28 AM
+The iterative pattern which could be visible in loops such as for, while and do-while takes a lot of time to execute, and thus the performance and scalability are also affected. To avoid this, all the queries can be made outside loops, and hence, the efficiency can be improved.
+
+
+Yogender
+  11:21 AM
+@Resource is the annotation that will help to extract beans from the container.
+
+
+You probably are in annotated bean discovery mode (the default mode in CDI 1.1+), that's why your class MyMapper is not considered as a bean class. In this mode, to be discovered bean class should have a bean defining annotation. @Stateless is a bean defining annotation so your EJB is also a CDI bean but its injection point cannot be satisfied because MyMapper wasn't discovered a bean class.
+11:39
+dependency injection - Meaning of bean discovery mode annotated in CDI 1.1 - Stack Overflow
+
+
+Yogender
+  12:21 PM
+. (edited) 
+12:21
+https://stackoverflow.com/questions/28352461/weld-001408-unsatisfied-dependencies-for-type-customer-with-qualifiers-default
+12:22
+Put a bean defining annotation on it. As @Model is a stereotype it's why it does the trick. A qualifier like @Named is not a bean defining annotation, reason why it doesn't work
+Change the bean discovery mode in your bean archive from the default "annotated" to "all" by adding a beans.xml file in your jar.
+Keep in mind that @Named has only one usage : expose your bean to the UI. Other usages are for bad practice or compatibility with legacy framework.
+
+Whereas COUNT() is a function, EXISTS in an operator. It is used to test for the existence of any record in a subquery. Hence, it returns true if the subquery returns one or more records.
+
+
+https://developer.mozilla.org/en-US/docs/Web/API/Window/unload_event
+3:15
+https://web.dev/bfcache/
+
+
+Yogender
+  4:53 PM
+getresultlist returns List<Object> , but even type casting var(where data is to be stored)  as List<Policy> dosn't returns a error but remains as objec
+that instance of ArrayList we are manually creating is instantly overwritten by the list that the query returns 
+
+While CommonJS and ES6 modules share similar syntax, they work in fundamentally different ways: ES6 modules are pre-parsed in order to resolve further imports before code is executed. CommonJS modules load dependencies on demand while executing the code.17-Apr-2018
+
+Relational databases are based on the fundamental idea that every object represents one and only one thing.
+In a database, the process of normalization, as a means of breaking down and isolating data, takes every table to the point where one row represents one thing.
+All of the smaller domain tables will fit on a single page of disk. This ensures a single read (and likely a single page in cache). If the other case, you might have your domain table spread across many pages, unless you cluster on the referring table name, which then could cause it to be more costly to use a non-clustered index if you have many values.
+
+
+files.forEach(async (file) => {
+    const contents = await fs.readFile(file, 'utf8')
+})
+The issue is, the promise returned by the iteration function is ignored by forEach(). forEach does not wait to move to the next iteration after each async code execution is completed. All the fs.readFile functions will be invoked in the same round of the event loop, which means they are started in parallel, not in sequential, and the execution continues immediately after invoking forEach(), without waiting for all the fs.readFile operations to complete. Since forEach does not wait for each promise to resolve, the loop actually finishes iterating before promises are resolved. You are expecting that after forEach is completed, all the async code is already executed but that is not the case. You may end up trying to access values that are not available yet.
+
+
+Yogender
+  11:39 AM
+Calling the length property is an O(1) operation, because it doesn't actually count the array, that field is set when the array is created. --> already set when array created same in c O(1)
+same in size in vector in c++ :: constant time (edited) 
+
+
+Yogender
+  11:45 AM
+The size, isEmpty, get, set, iterator, and listIterator operations run in constant time. The add operation runs in amortized constant time, that is, adding n elements requires O(n) time. All of the other operations run in linear time (roughly speaking). The constant factor is low compared to that for the LinkedList implementation.
+
+
+Yogender
+  4:08 PM
+. (edited) 
+4:08
+The JavaScript WeakSet object is the type of collection that allows us to store weakly held objects. Unlike Set, the WeakSet are the collections of objects only. It doesn't contain the arbitrary values.
+
+files.forEach(async (file) => {
+    const contents = await fs.readFile(file, 'utf8')
+})
+The issue is, the promise returned by the iteration function is ignored by forEach(). forEach does not wait to move to the next iteration after each async code execution is completed. All the fs.readFile functions will be invoked in the same round of the event loop, which means they are started in parallel, not in sequential, and the execution continues immediately after invoking forEach(), without waiting for all the fs.readFile operations to complete. Since forEach does not wait for each promise to resolve, the loop actually finishes iterating before promises are resolved. You are expecting that after forEach is completed, all the async code is already executed but that is not the case. You may end up trying to access values that are not available yet.
+
+
+BANCSTAC
+
+Electronic Commerce Indicator (ECI) is a value returned by Directory Servers (namely Visa, MasterCard, JCB, and American Express) indicating the outcome of authentication attempted on transactions enforced by 3DS.
+(edited)
+
+
+Yogender
+  4:16 PM
+. (edited) 
+
+
+Yogender
+  6:52 PM
+Components of 3-D Secure Authentication
+The idea behind 3DS authentication is to provide an additional step to the financial authorization process by authenticating the cardholder. It operates according to a three-domain model, which includes:
+
+Acquirer domain – the environment of the acquiring bank and merchant who is receiving the payment
+Issuer domain – the environment of the issuing bank whose card is providing the payment
+Interoperability domain – the systems in place that support the 3DS process by allowing the parties in the transaction to interact and exchange information
+The 3DS authentication process uses Secure Sockets Layer (SSL) protocol to send Extensible Markup Language (XML) messages with client authentication, providing digital certificates to confirm the identity of all parties involved in the transaction. This ensures maximum security.
+
+How 3-D Secure 2.0 Works
+(edited)
+6:56
+How 3-D Secure 2.0 Works
+Introduced in 2015, the latest version of this protocol promotes a less intrusive authentication process to reduce the cart abandonment that was occurring during the original 3DS–when users were redirected to the issuing bank's website to authenticate transactions.
+
+Now, merchants are required to send authentication data along with payment card information to verify the authenticity of the transaction. This process occurs invisibly to the user and authenticates the payment–unless the issuer finds reason to question the legitimacy of the transaction.
+
+If suspicious behavior or an unknown device causes the transaction to be flagged, the user can now receive a text message or confirmation code via an app to verify his or her identity–rather than being redirected to a bank's website to enter the password associated with the card. The result is a much less disruptive experience for the user.
+
+https://stackoverflow.com/questions/39632667/how-do-i-kill-the-process-currently-using-a-port-on-localhost-in-windows (edited) 
+
+
+Yogender
+  3:38 PM
+.Entities in JPA are nothing but POJOs representing data that can be persisted to the database. An entity represents a table stored in a database. Every instance of an entity represents a row in the table.
+Plain Old Java Object also known as POJO is a regular Java object with no special restrictions other than those forced by the Java Language Specification and does not require any classpath.
+The POJO is not bounded by any kind of framework; any Java program can use it. It can be created with ease and used to produce readability and reusability in the code.
+https://www.scaler.com/topics/pojo-class-in-java/ (edited) 
+
+ucaf = Universal Cardholder Authentication Field (UCAF) is a cryptographic value. Mastercard® SecureCode™ issuer or cardholder-generated authentication data resulting from all SecureCode fully authenticated or attempts transaction for Mastercard account. This field is populated when a UCAF-enabled merchant has collected authentication data and must pass it in the transaction to the issuer.
+
+cavv = Cardholder Authentication Verification Value (CAVV) is a cryptographic value. Visa issuer or cardholder-generated authentication data resulting from fully authenticated or attempts transaction for Visa account. This field is populated when a merchant has collected authentication data and must pass it in the transaction to the issuer.
+
+https://www.cashfree.com/blog/what-is-a-payment-gateway-india/#:~:text=Issuer%20Domain%20%E2%80%93%20Access%20Control%20Server%20(ACS)&text=They%20issue%20cards%20to%20cardholders,card%20user%20and%20the%20transaction.
+
+Interoperability Domain – Directory Server (DS)
+The interoperability domain consists of the Directory Server deployed by the card network. 
+It can be considered the foundation holding the entire 3D-secure mechanism together.
+The directory server acts as a 'directory' for the acquiring and issuing bank to transact money between each other. 
+As the name suggests the directory serves as a mapping server where acquiring banks send a message to the card network's DS. 
+It holds the "directory" of all the BIN ranges of the corresponding issuing banks. The Directory Server will receive the message from the MPI and check the card number against the BIN range directory. 
+Thereafter, it forwards that message to the correct issuing bank. The issuing bank would then proceed with authenticating the card user.
+
+In Java, generics are implemented by means of type erasure. For instance, the following code.
+
+List<String> hello = List.of("a", "b");
+String example = hello.get(0);
+Is compiled to the following.
+
+List hello = List.of("a", "b");
+String example = (String) hello.get(0);
+And List.of is defined as.
+
+static <E> List<E> of(E e1, E e2);
+Which after type erasure becomes.
+
+static List of(Object e1, Object e2);
+The compiler has no idea what are generic types at runtime, so if you write something like this.
+
+Object list = List.of("a", "b");
+List<Integer> actualList = (List<Integer>) list;
+Java Virtual Machine has no idea what generic types are while running a program, so this compiles and runs, as for Java Virtual Machine, this is a cast to List type (this is the only thing it can verify, so it verifies only that).
+
+But now add this line.
+
+Integer hello = actualList.get(0);
+And JVM will throw an unexpected ClassCastException, as Java compiler inserted an implicit cast.
+
+java.lang.ClassCastException: java.base/java.lang.String cannot be cast to java.base/java.lang.Integer
+An unchecked warning tells a programmer that a cast may cause a program to throw an exception somewhere else. Suppressing the warning with @SuppressWarnings("unchecked") tells the compiler that the programmer believes the code to be safe and won't cause unexpected exceptions.
+
+Why would you want to do that? Java type system isn't good enough to represent all possible type usage patterns. Sometimes you may know that a cast is safe, but Java doesn't provide a way to say so - to hide warnings like this, @SupressWarnings("unchecked") can be used, so that a programmer can focus on real warnings.
+
+Simply: It's a warning by which the compiler indicates that it cannot ensure type safety.
+A warning by which the compiler indicates that it cannot ensure type safety. The term "unchecked" warning is misleading. It does not mean that the warning is unchecked in any way. The term "unchecked" refers to the fact that the compiler and the runtime system do not have enough type information to perform all type checks that would be necessary to ensure type safety. In this sense, certain operations are "unchecked".
+https://stackoverflow.com/questions/1129795/what-is-suppresswarnings-unchecked-in-java
+(edited)
+
+Java is a strongly typed programming language because every variable must be declared with a data type. A variable cannot start off life without knowing the range of values it can hold, and once it is declared, the data type of the variable cannot change.
+A statically typed language has a type system that is checked at compile time by the implementation (a compiler or interpreter). The type check rejects some programs, and programs that pass the check usually come with some guarantees; for example, the compiler guarantees not to use integer arithmetic instructions on floating-point numbers.
+JavaScript is a dynamically typed language, which means that data types of variables are determined by the value they hold at runtime and can change throughout the program as we assign different values to them.
+There is no real agreement on what "strongly typed" means, although the most widely used definition in the professional literature is that in a "strongly typed" language, it is not possible for the programmer to work around the restrictions imposed by the type system. This term is almost always used to describe statically typed languages.
+
+What is the difference between a strongly typed language and a statically typed language?
+Static vs dynamic
+The opposite of statically typed is "dynamically typed", which means that
+
+Values used at run time are classified into types.
+There are restrictions on how such values can be used.
+When those restrictions are violated, the violation is reported as a (dynamic) type error.
+For example, Lua, a dynamically typed language, has a string type, a number type, and a Boolean type, among others. In Lua every value belongs to exactly one type, but this is not a requirement for all dynamically typed languages. In Lua, it is permissible to concatenate two strings, but it is not permissible to concatenate a string and a Boolean.
+
+Strong vs weak
+The opposite of "strongly typed" is "weakly typed", which means you can work around the type system. C is notoriously weakly typed because any pointer type is convertible to any other pointer type simply by casting. Pascal was intended to be strongly typed, but an oversight in the design (untagged variant records) introduced a loophole into the type system, so technically it is weakly typed. Examples of truly strongly typed languages include CLU, Standard ML, and Haskell. Standard ML has in fact undergone several revisions to remove loopholes in the type system that were discovered after the language was widely deployed.
+
+What's really going on here?
+Overall, it turns out to be not that useful to talk about "strong" and "weak". Whether a type system has a loophole is less important than the exact number and nature of the loopholes, how likely they are to come up in practice, and what are the consequences of exploiting a loophole. In practice, it's best to avoid the terms "strong" and "weak" altogether, because
+
+Amateurs often conflate them with "static" and "dynamic".
+
+Apparently "weak typing" is used by some persons to talk about the relative prevalance or absence of implicit conversions.
+
+Professionals can't agree on exactly what the terms mean.
+
+Overall you are unlikely to inform or enlighten your audience.
+
+The sad truth is that when it comes to type systems, "strong" and "weak" don't have a universally agreed on technical meaning. If you want to discuss the relative strength of type systems, it is better to discuss exactly what guarantees are and are not provided. For example, a good question to ask is this: "is every value of a given type (or class) guaranteed to have been created by calling one of that type's constructors?" In C the answer is no. In CLU, F#, and Haskell it is yes. For C++ I am not sure—I would like to know.
+
+By contrast, static typing means that programs are checked before being executed, and a program might be rejected before it starts. Dynamic typing means that the types of values are checked during execution, and a poorly typed operation might cause the program to halt or otherwise signal an error at run time. A primary reason for static typing is to rule out programs that might have such "dynamic type errors".
+
+Static typing is where the type is bound to the variable. Types are checked at compile time.
+
+Dynamic typing is where the type is bound to the value. Types are checked at run time.
+
+
+You might have noticed that I am always saying that multiple inheritances is not supported in classes but it's supported in interfaces. A single interface can extend multiple interfaces.
+This is perfectly fine because the interfaces are only declaring the methods and the actual implementation will be done by concrete classes implementing the interfaces. So there is no possibility of any kind of ambiguity in multiple inheritances in Java interfaces. That's why a java class can implement multiple interfaces, something like below example. InterfacesImpl.java
+
+
+A class can be made final by using the final keyword. The final class cannot be inherited and so the final keyword is commonly used with a class to prevent inheritance.
+(edited)
+
+
+Yogender
+  7:43 PM
+3.2. CBC
+In order to overcome the ECB weakness, CBC mode uses an Initialization Vector (IV) to augment the encryption. First, CBC uses the plaintext block xor with the IV. Then it encrypts the result to the ciphertext block. In the next block, it uses the encryption result to xor with the plaintext block until the last block.
+In this mode, encryption can't be parallelized, but decryption can be parallelized. It also requires padding data.
+As mentioned earlier, the AES has a block size of 128 bits or 16 bytes. The AES doesn't change the size, and the ciphertext size is equal to the cleartext size. Also, in ECB and CBC modes, we should use a padding algorithm like PKCS 5. So the size of data after encryption is:
+
+ciphertext_size (bytes) = cleartext_size + (16 - (cleartext_size % 16))
+Copy
+For storing IV with ciphertext, we need to add 16 more bytes.
+(edited)
+
+
+Yogender
+  7:58 PM
+"unchecked" warnings are also reported when the compiler finds a cast whose target type is either a parameterized type or a type parameter.
+ @Data is a convenient shortcut annotation that bundles the features of 
+ * @ToString, @EqualsAndHashCode, @Getter / @Setter and @RequiredArgsConstructor together.
+ (edited) 
+This file was deleted.
+
+
+Yogender
+  7:09 PM
+@Repository Annotation is a specialization of @Component annotation which is used to indicate that the class provides the mechanism for storage, retrieval, update, delete and search operation on objects. Though it is a specialization of @Component annotation, so Spring Repository classes are autodetected by spring framework through classpath scanning. This annotation is a general-purpose stereotype annotation which very close to the DAO pattern where DAO classes are responsible for providing CRUD operations on database tables.
+
+
+In real scenarios, RSA is not the perfect match for this kind of password encryption. RSA encryption is mostly used when there are 2 different endpoints are involved such as VPN client and server, SSH, etc. and performance-wise RSA encryption is slower. With every doubling of the RSA key length, decryption is 6-7 times slower. This use case is best fitted with AES encryption. We are creating this sample app only to demonstrate the interoperability of RSA encryption between Javascript and Java.
+
+
+PEM is a container file format often used to store cryptographic keys. It's used for many different things, as it simply defines the structure and encoding type of the file used to store a bit of data.
+In real scenarios, RSA is not the perfect match for this kind of password encryption. RSA encryption is mostly used when there are 2 different endpoints are involved such as VPN client and server, SSH, etc. and performance-wise RSA encryption is slower. With every doubling of the RSA key length, decryption is 6-7 times slower. This use case is best fitted with AES encryption. We are creating this sample app only to demonstrate the interoperability of RSA encryption between Javascript and Java.
+The private key is generated in PKCS#8 format and the public key is generated in X.509 format.
+1:30
+You pseudo-steps are correct, but your description not. For example, you normally keep RSA private key and distribute RSA public key.
+But a few suggestions for creating better code.
+I suggest to use PKCS5 for creating password-based secret keys rather than a simple hash. Java's PBEKeySpec is a class for generating such secret keys. Here is a small sample code which you can use for your setKey() routine (adjust it as you prefer):
+SecretKeyFactory skf = SecretKeyFactory.getInstance("AES");
+SecretKey key = skf.generateSecret(new PBEKeySpec(password.getBytes("UTF-8"), salt, 10000));
+Never use ECB mode of operation for encrypting data. In worse case, use CBC with randomized IV.
+You got something wrong. RSA private key is kept private on server, but RSA public key is distributed freely between clients(normally). You are doing this in the other way.
+This is just a suggestion, but I think it is better to use RSA/ECB/OAEPWithSHA-256AndMGF1Padding rather than RSA/ECB/PKCS1Padding for RSA padding. But I think it is not necessary.
+In general, you must add a hash or HMAC for authenticating your encrypted data too. But you don't have any authenticating mechanism right now.
+Update: Based on design of your mechanism, you cannot securely add an authentication method for detecting active attacks(such as man-in-the-middle). Check comments from Maarten too.
+
+
+If you are retrieving data, updating it, and returning it as a response within a method annotated with @Transactional, any changes made to the retrieved entities will be persisted to the database when the transaction is committed. This is because the @Transactional annotation ensures that the method is executed within a transaction, and any changes made to the entities will be persisted to the database when the transaction is committed.
+If you don't want the changes to be persisted to the database, you can detach the entities from the EntityManager before returning them as a response. This will remove the entities from the persistence context, and any changes made to the entities will not be persisted to the database when the transaction is committed. To detach an entity from the EntityManager, you can call the EntityManager's detach() method and pass in the entity as an argument.
+12:14
+To detach an entity from the EntityManager, you can call the EntityManager's detach() method and pass in the entity as an argument. For example, if you have an entity called "Client" and you want to detach it, you can call the following code:
+```
+entityManager.detach(client);
+```
+This will detach the "client" entity from the EntityManager, and any changes made to the entity will not be persisted to the database when the transaction is committed.
+
+
+Rajat
+  12:23 PM
+I see. If I understand correctly, you have a method annotated with @Transactional that retrieves an entity from the database, makes some changes to it, and then returns it. However, when the method returns, the changes made to the entity are persisted to the database even though you did not explicitly call a method to save the changes.
+This behavior is expected when using an ORM framework like Hibernate. When you retrieve an entity from the database using Hibernate, the entity is attached to the persistence context. Any changes made to the entity within the persistence context are automatically persisted to the database when the transaction is committed.
+In your case, since you are making changes to the entity within a method annotated with @Transactional, the changes are being made within the persistence context. When the method returns, the changes are automatically persisted to the database because they were made within the same transaction.
+If you want to make changes to an entity without persisting them to the database, you can detach the entity from the persistence context before returning it. You can do this by calling the "detach" method on the entity manager:
+```
+@Transactional
+public Client getClient(Long clientId) {
+    Client client = entityManager.find(Client.class, clientId);
+    client.setName("New Name");
+    entityManager.detach(client);
+    return client;
+}
+```
+In this example, the "detach" method is called on the entity manager before returning the client entity. This detaches the entity from the persistence context, so any changes made to it after this point will not be persisted to the database.
+
+
+`@JsonIdentityInfo` is an annotation in Jackson that is used to handle object identity during serialization and deserialization. 
+When serializing a Java object graph that contains circular references, Jackson can run into issues where it serializes the same object multiple times, leading to a large and inefficient JSON payload. `@JsonIdentityInfo` helps to solve this problem by allowing Jackson to serialize objects by reference, rather than by value.
+`@JsonIdentityInfo` can be used to annotate a class or a property, and takes two parameters: `generator` and `scope`. The `generator` parameter specifies the strategy for generating the identity value, while the `scope` parameter specifies the level of identity sharing.
+When Jackson encounters an object that is annotated with `@JsonIdentityInfo`, it generates an identity value for the object and stores it in a lookup table. When Jackson encounters the same object again during serialization, it replaces the object with a reference to the identity value. This can greatly reduce the size of the resulting JSON payload.
+Overall, `@JsonIdentityInfo` is a powerful tool for handling object identity in complex Java object graphs during JSON serialization and deserialization.
+
+

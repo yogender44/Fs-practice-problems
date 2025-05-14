@@ -1,0 +1,34 @@
+hibernate:
+https://www.baeldung.com/jpa-hibernate-persistence-context
+
+
+https://antoniogoncalves.org/2011/04/07/injection-with-cdi-part-i/
+
+https://web.dev/http-cache/
+6:08
+https://web.dev/bfcache/
+
+https://www.red-gate.com/simple-talk/databases/sql-server/database-administration-sql-server/ten-common-database-design-mistakes/
+
+
+https://learn.microsoft.com/en-gb/cpp/cpp/welcome-back-to-cpp-modern-cpp?view=msvc-170
+
+https://www.cashfree.com/blog/what-is-a-payment-gateway-india/#:~:text=Issuer%20Domain%20%E2%80%93%20Access%20Control%20Server%20(ACS)&text=They%20issue%20cards%20to%20cardholders,card%20user%20and%20the%20transaction.
+
+
+Yogender
+  7:41 PM
+https://www.cloudamqp.com/blog/part1-rabbitmq-for-beginners-what-is-rabbitmq.html (edited) 
+
+https://web.archive.org/web/20090219232347/http://www.ibm.com/developerworks/java/library/j-jtp01255.html
+
+**********IMPORTANT**********
+https://increase.com/articles/iso-8583-the-language-of-credit-cards
+
+https://www.nsoftware.com/kb/articles/3dsecurev2
+
+https://rahulbhilesha077.medium.com/encryption-decryption-using-rsa-in-java-script-cb7b3a6b3eee
+
+https://ap-gateway.mastercard.com/api/documentation/apiDocumentation/rest-json/version/latest/operation/Transaction%3a%20%20Retrieve%20Transaction.html?locale=en_US
+
+
